@@ -8,6 +8,17 @@
 	<link rel="stylesheet" href="css/toDo.css">
 </head>
 <body>
-	
+	<h1>Todo List</h1>
+	<button id="displayTodosBtn">Display Todos</button>
+	<button>Toggle all</button>
+
+<script>
+var displayTodosButton = document.getElementById('displayTodosBtn');
+console.log(displayTodosButton);
+
+displayTodosBtn.addEventListener('click', function() {
+	toDoList.displayToDos();
+});
+</script>
 </body>
 </html>
