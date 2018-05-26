@@ -9,23 +9,20 @@
 </head>
 <body>
 	<h1>Todo List</h1>
-	<button id="displayTodosBtn">Display Todos</button>
-	<button id="toggleAllBtn">Toggle all</button>
+	
+	<button onclick="handlers.displayToDos()">Display Todos</button>
+	<button onclick="handlers.toggleAll()">Toggle all</button>
 
 <script>
-var displayTodosButton = document.getElementById('displayTodosBtn');
-console.log(displayTodosButton);
 
-displayTodosBtn.addEventListener('click', function() {
+var handlers = {
+	displayToDos : function() {
 	toDoList.displayToDos();
-});
-
-var toggleAllButton = document.getElementById('toggleAllBtn');
-console.log(toggleAllButton);
-
-toggleAllBtn.addEventListener('click', function() {
+	},
+	toggleAll: function() {
 	toDoList.toggleAll();
-});
+	}
+};
 </script>
 </body>
 </html>
