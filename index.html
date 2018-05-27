@@ -10,7 +10,6 @@
 <body>
 	<h1>Todo List</h1>
 	<div>
-		<button onclick="handlers.displayToDos()">Display Todos</button>
 		<button onclick="handlers.toggleAll()">Toggle all</button>
 	</div>
 
@@ -42,16 +41,15 @@
 <script>
 
 var handlers = {
-	displayToDos : function() {
-		toDoList.displayToDos();
-	},
 	toggleAll: function() {
 		toDoList.toggleAll();
+		view.displayToDos();
 	},
 	addToDo : function() {
 		var addToDoTextInput = document.getElementById('addToDoTextInput');
 		toDoList.addToDo(addToDoTextInput.value);
 		addToDoTextInput.value = '';
+		view.displayToDos();
 	},
 	changeToDo : function() {
 		var changeToDoPositionInput = document.getElementById('changeToDoPositionInput');
@@ -59,16 +57,19 @@ var handlers = {
 		toDoList.changeToDo(changeToDoPositionInput.valueAsNumber, changeToDoTextInput.value);
 		changeToDoTextInput.value = '';
 		changeToDoPositionInput.value = '';
+		view.displayToDos();
 	},
 	deleteToDo : function() {
 		var deleteToDoPositionInput = document.getElementById('deleteToDoPositionInput');
 		toDoList.deleteToDo(deleteToDoPositionInput.valueAsNumber);
 		deleteToDoPositionInput.value = '';
+		view.displayToDos();
 	},
 	toggleToDo : function() {
 		var toggleToDoPositionInput = document.getElementById('toggleToDoPositionInput');
 		toDoList.toggleCompleted(toggleToDoPositionInput.valueAsNumber);
 		toggleToDoPositionInput.value = '';
+		view.displayToDos();
 	}
 };
 </script>
