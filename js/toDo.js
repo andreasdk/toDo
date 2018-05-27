@@ -67,6 +67,7 @@ var view = {
 		toDosUl.innerHTML = '';
 		for (var i = 0; i < toDoList.toDos.length; i++) {
 			var toDoLi = document.createElement('li');
+			toDoLi.textContent = toDoList.toDos[i].toDoText;
 			toDosUl.appendChild(toDoLi);
 		}
 	}
