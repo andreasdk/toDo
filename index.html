@@ -9,18 +9,30 @@
 </head>
 <body>
 	<h1>Todo List</h1>
+	<div>
+		<button onclick="handlers.displayToDos()">Display Todos</button>
+		<button onclick="handlers.toggleAll()">Toggle all</button>
+	</div>
+
+<div>
+	<button onclick="handlers.addToDo()">Add Todos</button>
+	<input id="addToDoTextInput" type="text">
+</div>
 	
-	<button onclick="handlers.displayToDos()">Display Todos</button>
-	<button onclick="handlers.toggleAll()">Toggle all</button>
 
 <script>
 
 var handlers = {
 	displayToDos : function() {
-	toDoList.displayToDos();
+		toDoList.displayToDos();
 	},
 	toggleAll: function() {
-	toDoList.toggleAll();
+		toDoList.toggleAll();
+	},
+	addToDo : function() {
+		var addToDoTextInput = document.getElementById('addToDoTextInput');
+		toDoList.addToDo(addToDoTextInput.value);
+		addToDoTextInput.value = '';
 	}
 };
 </script>
