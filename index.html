@@ -29,6 +29,11 @@
 	<button onclick="handlers.deleteToDo()">Delete Todo</button>
 	<input id="deleteToDoPositionInput" type="number">
 </div>
+
+<div>
+	<button onclick="handlers.toggleToDo()">Toggle Todo</button>
+	<input id="toggleToDoPositionInput" type="number">
+</div>
 	
 
 <script>
@@ -56,6 +61,11 @@ var handlers = {
 		var deleteToDoPositionInput = document.getElementById('deleteToDoPositionInput');
 		toDoList.deleteToDo(deleteToDoPositionInput.valueAsNumber);
 		deleteToDoPositionInput.value = '';
+	},
+	toggleToDo : function() {
+		var toggleToDoPositionInput = document.getElementById('toggleToDoPositionInput');
+		toDoList.toggleCompleted(toggleToDoPositionInput.valueAsNumber);
+		toggleToDoPositionInput.value = '';
 	}
 };
 </script>
