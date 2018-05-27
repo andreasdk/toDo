@@ -20,9 +20,14 @@
 </div>
 
 <div>
-	<button onclick="handlers.changeToDo()">Change Todos</button>
+	<button onclick="handlers.changeToDo()">Change Todo</button>
 	<input id="changeToDoPositionInput" type="number">
 	<input id="changeToDoTextInput" type="text">
+</div>
+
+<div>
+	<button onclick="handlers.deleteToDo()">Delete Todo</button>
+	<input id="deleteToDoPositionInput" type="number">
 </div>
 	
 
@@ -46,6 +51,11 @@ var handlers = {
 		toDoList.changeToDo(changeToDoPositionInput.valueAsNumber, changeToDoTextInput.value);
 		changeToDoTextInput.value = '';
 		changeToDoPositionInput.value = '';
+	},
+	deleteToDo : function() {
+		var deleteToDoPositionInput = document.getElementById('deleteToDoPositionInput');
+		toDoList.deleteToDo(deleteToDoPositionInput.valueAsNumber);
+		deleteToDoPositionInput.value = '';
 	}
 };
 </script>
