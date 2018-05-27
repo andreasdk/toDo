@@ -18,6 +18,12 @@
 	<button onclick="handlers.addToDo()">Add Todos</button>
 	<input id="addToDoTextInput" type="text">
 </div>
+
+<div>
+	<button onclick="handlers.changeToDo()">Change Todos</button>
+	<input id="changeToDoPositionInput" type="number">
+	<input id="changeToDoTextInput" type="text">
+</div>
 	
 
 <script>
@@ -33,6 +39,13 @@ var handlers = {
 		var addToDoTextInput = document.getElementById('addToDoTextInput');
 		toDoList.addToDo(addToDoTextInput.value);
 		addToDoTextInput.value = '';
+	},
+	changeToDo : function() {
+		var changeToDoPositionInput = document.getElementById('changeToDoPositionInput');
+		var changeToDoTextInput = document.getElementById('changeToDoTextInput');
+		toDoList.changeToDo(changeToDoPositionInput.valueAsNumber, changeToDoTextInput.value);
+		changeToDoTextInput.value = '';
+		changeToDoPositionInput.value = '';
 	}
 };
 </script>
