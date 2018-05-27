@@ -61,3 +61,13 @@ var toDoList = {
   }
 };
 
+var view = {
+	displayToDos: function() {
+		var toDosUl = document.querySelector('ul');
+		toDosUl.innerHTML = '';
+		for (var i = 0; i < toDoList.toDos.length; i++) {
+			var toDoLi = document.createElement('li');
+			toDosUl.appendChild(toDoLi);
+		}
+	}
+};
