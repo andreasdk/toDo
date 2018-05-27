@@ -67,7 +67,15 @@ var view = {
 		toDosUl.innerHTML = '';
 		for (var i = 0; i < toDoList.toDos.length; i++) {
 			var toDoLi = document.createElement('li');
-			toDoLi.textContent = toDoList.toDos[i].toDoText;
+			var toDo = toDoList.toDos[i];
+			var toDoTextWithCompletion = '';
+
+			if(toDo.completed === true)
+				toDoTextWithCompletion = '(x) ' + toDo.toDoText;
+			else
+				toDoTextWithCompletion = '( ) ' + toDo.toDoText;
+
+			toDoLi.textContent = toDoTextWithCompletion;
 			toDosUl.appendChild(toDoLi);
 		}
 	}
