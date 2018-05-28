@@ -55,6 +55,7 @@ var view = {
 				toDoTextWithCompletion = '( ) ' + toDo.toDoText;
 
 			toDoLi.textContent = toDoTextWithCompletion;
+			toDoLi.appendChild(this.createDeleteButton());
 			toDosUl.appendChild(toDoLi);
 		}
 	},
