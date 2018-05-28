@@ -54,6 +54,7 @@ var view = {
 			else
 				toDoTextWithCompletion = '( ) ' + toDo.toDoText;
 
+			toDoLi.id = i;
 			toDoLi.textContent = toDoTextWithCompletion;
 			toDoLi.appendChild(this.createDeleteButton());
 			toDosUl.appendChild(toDoLi);
@@ -66,3 +67,6 @@ var view = {
 		return deleteButton;
 	}
 };
+
+
+

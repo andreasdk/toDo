@@ -72,6 +72,10 @@ var handlers = {
 		view.displayToDos();
 	}
 };
+var toDosUl = document.querySelector('ul');
+toDosUl.addEventListener('click', function(event) {
+	console.log(event.target.parentNode.id);
+});
 </script>
 </body>
 </html>
