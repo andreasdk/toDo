@@ -40,33 +40,8 @@ var toDoList = {
   }
 };
 
-var view = {
-	displayToDos: function() {
-		var toDosUl = document.querySelector('ul');
-		toDosUl.innerHTML = '';
-		for (var i = 0; i < toDoList.toDos.length; i++) {
-			var toDoLi = document.createElement('li');
-			var toDo = toDoList.toDos[i];
-			var toDoTextWithCompletion = '';
 
-			if(toDo.completed === true)
-				toDoTextWithCompletion = '(x) ' + toDo.toDoText;
-			else
-				toDoTextWithCompletion = '( ) ' + toDo.toDoText;
 
-			toDoLi.id = i;
-			toDoLi.textContent = toDoTextWithCompletion;
-			toDoLi.appendChild(this.createDeleteButton());
-			toDosUl.appendChild(toDoLi);
-		}
-	},
-	createDeleteButton : function() {
-		var deleteButton = document.createElement('button');
-		deleteButton.textContent = 'Delete';
-		deleteButton.className = 'deleteButton';
-		return deleteButton;
-	}
-};
 
 
 

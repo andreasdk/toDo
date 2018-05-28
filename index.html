@@ -59,10 +59,8 @@ var handlers = {
 		changeToDoPositionInput.value = '';
 		view.displayToDos();
 	},
-	deleteToDo : function() {
-		var deleteToDoPositionInput = document.getElementById('deleteToDoPositionInput');
-		toDoList.deleteToDo(deleteToDoPositionInput.valueAsNumber);
-		deleteToDoPositionInput.value = '';
+	deleteToDo : function(position) {
+		toDoList.deleteToDo(position);
 		view.displayToDos();
 	},
 	toggleToDo : function() {
@@ -72,10 +70,45 @@ var handlers = {
 		view.displayToDos();
 	}
 };
-var toDosUl = document.querySelector('ul');
-toDosUl.addEventListener('click', function(event) {
-	console.log(event.target.parentNode.id);
-});
+var view = {
+	displayToDos: function() {
+		var toDosUl = document.querySelector('ul');
+		toDosUl.innerHTML = '';
+		for (var i = 0; i < toDoList.toDos.length; i++) {
+			var toDoLi = document.createElement('li');
+			var toDo = toDoList.toDos[i];
+			var toDoTextWithCompletion = '';
+
+			if(toDo.completed === true)
+				toDoTextWithCompletion = '(x) ' + toDo.toDoText;
+			else
+				toDoTextWithCompletion = '( ) ' + toDo.toDoText;
+
+			toDoLi.id = i;
+			toDoLi.textContent = toDoTextWithCompletion;
+			toDoLi.appendChild(this.createDeleteButton());
+			toDosUl.appendChild(toDoLi);
+		}
+	},
+	createDeleteButton : function() {
+		var deleteButton = document.createElement('button');
+		deleteButton.textContent = 'Delete';
+		deleteButton.className = 'deleteButton';
+		return deleteButton;
+	},
+	setUpEventListeners : function() {
+	 var toDosUl = document.querySelector('ul');
+	 toDosUl.addEventListener('click', function(event) {
+	
+	  var elementClicked = event.target;
+
+	  if (elementClicked.className === 'deleteButton') {
+		handlers.deleteToDo(parseInt(elementClicked.parentNode.id));
+	  }
+    });
+  }	
+};
+view.setUpEventListeners();
 </script>
 </body>
 </html>
