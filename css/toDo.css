@@ -15,3 +15,11 @@ body {
 	color: white;
 	font-family: 'Center Gothic', sans-serif;
 }
+
+.toDoContent {
+	margin-bottom: .5em;
+}
+
+.toDoInput {
+	margin-bottom: .5em;
+}

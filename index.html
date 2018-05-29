@@ -11,27 +11,31 @@
 <body>
 <div class="toDoAppBody">
 		<h1>ToDo List</h1>
-	<div class="col-md-12">
-		<button onclick="handlers.toggleAll()">Toggle all</button>
+
+	<div class="col-md-12 toDoContent">
+		<button class="btn btn-block" onclick="handlers.toggleAll()">Toggle all</button>
 	</div>
 
-	<div class="col-md-12">
-		<button onclick="handlers.addToDo()">Add Todos</button>
-		<input id="addToDoTextInput" type="text">
+	<div class="col-md-12 toDoContent">
+		<input id="addToDoTextInput" class="form-control toDoInput" type="text" placeholder="Insert toDo">
+		<button class="btn btn-block" onclick="handlers.addToDo()">Add Todos</button>
+		
 	</div>
 
-	<div class="col-md-12">
-		<button onclick="handlers.changeToDo()">Change Todo</button>
-		<input id="changeToDoPositionInput" type="number">
-		<input id="changeToDoTextInput" type="text">
+	<div class="col-md-12 toDoContent">
+		<input id="changeToDoPositionInput" class="form-control toDoInput" type="number" placeholder="Enter toDo index position">
+		<input id="changeToDoTextInput" class="form-control toDoInput" type="text" placeholder="Insert modified toDo text">
+		<button class="btn btn-block" onclick="handlers.changeToDo()">Change Todo</button>
+		
 	</div>
 
-	<div class="col-md-12">
-		<button onclick="handlers.toggleToDo()">Toggle Todo</button>
-		<input id="toggleToDoPositionInput" type="number">
+	<div class="col-md-12 toDoContent">
+		<input id="toggleToDoPositionInput" class="form-control toDoInput" type="number" placeholder="Insert toDo index position">
+		<button class="btn btn-block" onclick="handlers.toggleToDo()">Toggle Todo</button>
+		
 	</div>
-	
-	<div class="col-md-12">
+
+	<div class="col-md-12 toDoContent">
 		<ul>
 		
 	    </ul>
