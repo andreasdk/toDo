@@ -3,36 +3,43 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
+	<title>toDo App</title>
 	<script src="js/toDo.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/toDo.css">
 </head>
 <body>
-	<h1>Todo List</h1>
-	<div>
+<div class="toDoAppBody">
+		<h1>ToDo List</h1>
+	<div class="col-md-12">
 		<button onclick="handlers.toggleAll()">Toggle all</button>
 	</div>
 
-<div>
-	<button onclick="handlers.addToDo()">Add Todos</button>
-	<input id="addToDoTextInput" type="text">
-</div>
+	<div class="col-md-12">
+		<button onclick="handlers.addToDo()">Add Todos</button>
+		<input id="addToDoTextInput" type="text">
+	</div>
 
-<div>
-	<button onclick="handlers.changeToDo()">Change Todo</button>
-	<input id="changeToDoPositionInput" type="number">
-	<input id="changeToDoTextInput" type="text">
-</div>
+	<div class="col-md-12">
+		<button onclick="handlers.changeToDo()">Change Todo</button>
+		<input id="changeToDoPositionInput" type="number">
+		<input id="changeToDoTextInput" type="text">
+	</div>
 
-<div>
-	<button onclick="handlers.toggleToDo()">Toggle Todo</button>
-	<input id="toggleToDoPositionInput" type="number">
+	<div class="col-md-12">
+		<button onclick="handlers.toggleToDo()">Toggle Todo</button>
+		<input id="toggleToDoPositionInput" type="number">
+	</div>
+	
+	<div class="col-md-12">
+		<ul>
+		
+	    </ul>
+    </div>
+	
 </div>
 	
-	<ul>
-		
-	</ul>
-
+	
 <script>
 
 var handlers = {
