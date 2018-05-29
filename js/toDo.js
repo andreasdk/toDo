@@ -21,22 +21,21 @@ var toDoList = {
   	var completedToDos = 0;
 
   	// Get number of compelted toDos
-  	for (var i = 0; i < totalToDos; i++){
-  		if (this.toDos[i].completed === true) {
+  	this.toDos.forEach(function(toDo) {
+  		if (toDo.completed === true) {
   			completedToDos++;
   		}
-  	}
+  	});
 
-  	// If everything's true, make everything false
-  	if (completedToDos === totalToDos) {
-  	for (var i = 0; i < totalToDos; i++) {
-  		this.toDos[i].completed = false;
-  	  } 
-  	} else {
-  	  for (var i = 0; i < totalToDos; i++) {
-  	  	this.toDos[i].completed = true;
-  	  	}
-  	  }
+  	this.toDos.forEach(function(toDo) {
+  		// if everything true, make everything false
+  		if (completedToDos === totalToDos) {
+  		// otherwise make everything true	
+  			toDo.completed = false;
+  		} else {
+  			toDo.completed = true;
+  		}
+  	});
   }
 };
 
